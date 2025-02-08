@@ -1,8 +1,8 @@
 # This file is executed on every boot (including wake-boot from deepsleep)
-#import esp
-#esp.osdebug(None)
-#import webrepl
-#webrepl.start()
+# import esp
+# esp.osdebug(None)
+# import webrepl
+# webrepl.start()
 
 import network
 import time
@@ -13,6 +13,7 @@ password = "9705096919"
 
 # Blue LED
 led = machine.Pin(2, machine.Pin.OUT)
+led2 = machine.Pin(2, machine.Pin.OUT)
 
 def connect_wifi():
     wlan = network.WLAN(network.STA_IF)
@@ -39,4 +40,3 @@ except Exception as e:
     print(f"An error occurred: {e}")
     led.value(0)
     print("LED is OFF.")
-
